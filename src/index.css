@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased font-sans overflow-x-hidden transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-white/[0.03] backdrop-blur-xl border border-zinc-200/60 dark:border-white/[0.08];
+  }
+  .glass-hover {
+    @apply transition-all duration-300 hover:border-studz-brand/40 dark:hover:border-studz-brand/30 hover:bg-white/90 dark:hover:bg-white/[0.05];
+  }
+  .text-gradient {
+    @apply bg-gradient-to-b from-zinc-900 via-zinc-800 to-studz-brand dark:from-white dark:via-white dark:to-studz-brandLight bg-clip-text text-transparent;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .link-divider {
+    @apply mx-1 sm:mx-2 h-4 w-px shrink-0 bg-zinc-300/90 dark:bg-white/15 shadow-[0_0_6px_rgba(0,0,0,0.06)] dark:shadow-[0_0_8px_rgba(255,255,255,0.04)] backdrop-blur-sm;
+  }
+  .legal-link {
+    @apply text-zinc-600 dark:text-zinc-400 hover:text-studz-brand dark:hover:text-studz-brandLight transition-colors font-medium;
+  }
+  .footer-legal-bar {
+    @apply rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/50 dark:bg-white/[0.02] backdrop-blur-md shadow-sm;
+  }
+  .purple-glass {
+    @apply bg-studz-brand/75 dark:bg-studz-brandDark/55 backdrop-blur-xl border border-studz-brandLight/25 shadow-md;
+    background-image: linear-gradient(
+      135deg,
+      rgba(229, 77, 12, 0.88) 0%,
+      rgba(255, 94, 20, 0.78) 45%,
+      rgba(255, 140, 83, 0.68) 100%
+    );
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-studz-brand font-semibold shadow-md hover:bg-orange-50 transition-all hover:scale-[1.01];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass glass-hover text-zinc-700 dark:text-zinc-200 font-medium;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-studz-brand hover:bg-studz-brandDark text-white font-medium shadow-sm transition-all hover:scale-[1.01];
+  }
+}
