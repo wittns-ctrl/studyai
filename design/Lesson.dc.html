@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI lesson: Photosynthesis</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#10806A}a:hover{color:#0B6655}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F7F7FB; color: #16181D; font-family: 'DM Sans', system-ui, sans-serif; display: flex; flex-direction: column">
+
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E3E6EC">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+      <a href="Dashboard.dc.html" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px 0 10px; border-radius: 6px; border: 1.5px solid #D5D9E2; color: #16181D; text-decoration: none; font-size: 14px; font-weight: 600">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>Today</a>
+      <nav aria-label="Breadcrumb" style="flex: 1; min-width: 200px; font-size: 14px; color: #5B6170">Biology <span aria-hidden="true">/</span> Cell energy <span aria-hidden="true">/</span> <strong style="color: #16181D">Photosynthesis</strong></nav>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <span style="font-size: 14px; color: #5B6170">Step 2 of 5</span>
+        <div style="width: 140px; height: 8px; border-radius: 999px; background: #EEF0F3"><div style="width: 40%; height: 8px; border-radius: 999px; background: #10806A"></div></div>
+      </div>
+      <div style="display: flex; gap: 8px">
+        <button type="button" aria-label="Read aloud" style="width: 44px; height: 44px; border-radius: 6px; border: 1.5px solid #D5D9E2; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16181D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path></svg></button>
+        <button type="button" aria-label="Text size and reading options" style="width: 44px; height: 44px; border-radius: 6px; border: 1.5px solid #D5D9E2; background: #FFFFFF; font: 700 15px 'DM Sans', sans-serif; color: #16181D">Aa</button>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width: 1320px; width: 100%; margin: 0 auto; padding: 28px 24px 40px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+    <article style="flex: 999 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 22px; padding: 36px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: #E3F3EF; color: #0B6655; font-size: 13px; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #10806A"></span>Explore mode</span>
+        <div role="group" aria-label="Explanation style" style="display: inline-flex; padding: 4px; border-radius: 12px; background: #EEF0F3; gap: 4px">
+          <sc-for list="{{ styleTabs }}" as="t" hint-placeholder-count="3">
+            <button type="button" aria-pressed="{{ t.pressed }}" onClick="{{ t.pick }}" style="height: 40px; padding: 0 16px; border-radius: 6px; border: none; background: {{ t.bg }}; color: {{ t.color }}; box-shadow: {{ t.shadow }}; font: 600 14px 'DM Sans', sans-serif; cursor: pointer">{{ t.title }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h1 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; line-height: 1.1">How do plants make their <span style="color: #F2603F">own food</span>?</h1>
+        <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #2A2E38; max-width: 720px">{{ intro }}</p>
+      </div>
+
+      <div style="background: #F7F7FB; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6170">The equation</span>
+        <span style="font-family: Outfit, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">6CO₂ + 6H₂O <span style="color: #10806A">→</span> C₆H₁₂O₆ + 6O₂</span>
+        <span style="font-size: 14px; color: #5B6170">carbon dioxide + water, using light energy and chlorophyll, gives glucose + oxygen</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-family: Outfit, sans-serif; font-size: 22px; font-weight: 700">{{ stepsHeading }}</h2>
+        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span style="width: 32px; height: 32px; flex: none; border-radius: 10px; background: #E3F3EF; color: #0B6655; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center">{{ s.n }}</span>
+              <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 4px">
+                <strong style="font-size: 17px">{{ s.title }}</strong>
+                <span style="font-size: 16px; line-height: 1.65; color: #3A3F4B">{{ s.body }}</span>
+              </div>
+            </li>
+          </sc-for>
+        </ol>
+      </div>
+
+      <sc-if value="{{ isExam }}" hint-placeholder-val="{{ false }}">
+        <div style="border: 1.5px solid #F5B23D; background: #FFF9EC; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7A4F00">Common mistakes that lose marks</span>
+          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.6; color: #2A2E38">
+            <li>Saying plants get their food from the soil.</li>
+            <li>Calling light a reactant. It is the energy source.</li>
+            <li>Mixing up photosynthesis and respiration.</li>
+          </ul>
+        </div>
+      </sc-if>
+
+      <div style="display: flex; gap: 18px; align-items: flex-start; background: #0F4F45; color: #FFFFFF; border-radius: 18px; padding: 22px 24px">
+        <span style="width: 40px; height: 40px; flex: none; border-radius: 12px; background: #F5B23D; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16181D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m4.9 19.1 1.4-1.4"></path><path d="m17.7 6.3 1.4-1.4"></path></svg></span>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <strong style="font-size: 16px">Real-world example</strong>
+          <span style="font-size: 16px; line-height: 1.65; color: #DDEBE7">Farmers light greenhouses in winter and add extra carbon dioxide. More light and more CO₂ mean faster photosynthesis, so tomatoes grow bigger, sooner.</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 8px; border-top: 1px solid #EEF0F3">
+        <button type="button" style="height: 44px; padding: 0 16px; border-radius: 6px; border: 1.5px solid #D5D9E2; background: #FFFFFF; font: 600 14px 'DM Sans', sans-serif; color: #16181D">Explain it differently</button>
+        <button type="button" style="height: 44px; padding: 0 16px; border-radius: 6px; border: 1.5px solid #D5D9E2; background: #FFFFFF; font: 600 14px 'DM Sans', sans-serif; color: #16181D">Show a diagram</button>
+        <a href="Notes.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 6px; border: 1.5px solid #D5D9E2; background: #FFFFFF; font-size: 14px; font-weight: 600; color: #16181D; text-decoration: none">Save to notes</a>
+        <span style="flex: 1"></span>
+        <button type="button" style="height: 44px; padding: 0 20px; border-radius: 6px; border: none; background: #10806A; color: #FFFFFF; box-shadow: 0 10px 20px -10px rgba(16,128,106,0.65); font: 600 14px 'DM Sans', sans-serif">Next: what speeds it up</button>
+      </div>
+    </article>
+
+    <aside style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #10806A">Check your understanding</span>
+        <h2 id="quiz-q" style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.4">Which gas do plants release during photosynthesis?</h2>
+        <div role="group" aria-labelledby="quiz-q" style="display: flex; flex-direction: column; gap: 8px">
+          <sc-for list="{{ options }}" as="o" hint-placeholder-count="4">
+            <button type="button" aria-pressed="{{ o.pressed }}" onClick="{{ o.pick }}" style="min-height: 48px; padding: 10px 14px; text-align: left; border-radius: 6px; border: 2px solid {{ o.border }}; background: {{ o.bg }}; font: 500 15px 'DM Sans', sans-serif; color: #16181D; display: flex; align-items: center; gap: 12px; cursor: pointer">
+              <span style="width: 26px; height: 26px; flex: none; border-radius: 8px; background: {{ o.keyBg }}; color: {{ o.keyColor }}; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center">{{ o.key }}</span>{{ o.title }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ showRight }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="padding: 14px 16px; border-radius: 12px; background: #E2F4EC; color: #145C3D; font-size: 15px; line-height: 1.55"><strong>Correct.</strong> Oxygen comes from splitting water molecules, not from the carbon dioxide.</div>
+        </sc-if>
+        <sc-if value="{{ showWrong }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="padding: 14px 16px; border-radius: 12px; background: #FDF0D6; color: #5C3B00; font-size: 15px; line-height: 1.55"><strong>Not quite.</strong> Look at the right-hand side of the equation. Which gas appears there?</div>
+        </sc-if>
+      </section>
+
+      <section style="background: #E3F3EF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <label for="followup" style="font-size: 16px; font-weight: 700">Ask a follow-up</label>
+        <textarea id="followup" rows="3" placeholder="Anything unclear in this step?" style="padding: 12px 14px; border-radius: 6px; border: 1.5px solid #B9DED5; background: #FFFFFF; font: 400 15px 'DM Sans', sans-serif; color: #16181D; resize: vertical"></textarea>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <button type="button" style="min-height: 36px; padding: 6px 12px; border-radius: 999px; border: 1px solid #B9DED5; background: #FFFFFF; font: 500 13px 'DM Sans', sans-serif; color: #0B6655">Why is chlorophyll green?</button>
+          <button type="button" style="min-height: 36px; padding: 6px 12px; border-radius: 999px; border: 1px solid #B9DED5; background: #FFFFFF; font: 500 13px 'DM Sans', sans-serif; color: #0B6655">What happens at night?</button>
+        </div>
+        <button type="button" style="height: 46px; border-radius: 6px; border: none; background: #10806A; color: #FFFFFF; box-shadow: 0 10px 20px -10px rgba(16,128,106,0.65); font: 600 15px 'DM Sans', sans-serif">Ask</button>
+      </section>
+
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 20px 24px; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 700">In this lesson</h2>
+        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+          <li style="display: flex; gap: 10px; align-items: center; color: #5B6170"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F8A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>What plants need</li>
+          <li style="display: flex; gap: 10px; align-items: center; font-weight: 700"><span style="width: 16px; height: 16px; border-radius: 50%; background: #10806A"></span>How the process works</li>
+          <li style="display: flex; gap: 10px; align-items: center; color: #5B6170"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C9CED8; box-sizing: border-box"></span>What speeds it up</li>
+          <li style="display: flex; gap: 10px; align-items: center; color: #5B6170"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C9CED8; box-sizing: border-box"></span>Photosynthesis vs respiration</li>
+          <li style="display: flex; gap: 10px; align-items: center; color: #5B6170"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C9CED8; box-sizing: border-box"></span>Final check</li>
+        </ol>
+      </section>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  state = { style: 'basic', answer: null };
+
+  renderVals() {
+    const s = this.state;
+    const content = {
+      basic: {
+        intro: 'Think of a leaf as a tiny kitchen. Sunlight is the energy, water and air are the ingredients, and the meal it cooks is sugar. Oxygen is what is left over.',
+        stepsHeading: 'Four simple steps',
+        steps: [
+          { title: 'Catch the light', body: 'Leaves are green because of chlorophyll, which soaks up sunlight.' },
+          { title: 'Collect the ingredients', body: 'Roots pull up water. Tiny holes in the leaves let carbon dioxide in from the air.' },
+          { title: 'Cook the sugar', body: 'The leaf uses the light energy to join water and carbon dioxide into glucose, a sugar.' },
+          { title: 'Let out oxygen', body: 'Oxygen is not needed, so it escapes through the same tiny holes. That is the oxygen we breathe.' },
+        ],
+      },
+      detailed: {
+        intro: 'Photosynthesis happens inside chloroplasts and runs in two linked stages: one captures energy from light, the other uses that energy to build glucose.',
+        stepsHeading: 'The two stages, in detail',
+        steps: [
+          { title: 'Light is absorbed', body: 'Chlorophyll in the thylakoid membranes absorbs mostly red and blue light, exciting electrons.' },
+          { title: 'Water is split', body: 'The energy splits water (photolysis) into hydrogen ions, electrons and oxygen. The oxygen is released.' },
+          { title: 'Energy carriers are made', body: 'The light-dependent reactions produce ATP and NADPH, which carry energy to the next stage.' },
+          { title: 'The Calvin cycle builds sugar', body: 'In the stroma, the enzyme RuBisCO fixes CO₂. ATP and NADPH power the reactions that make glucose.' },
+        ],
+      },
+      exam: {
+        intro: 'Photosynthesis is an endothermic reaction in which light energy is used to convert carbon dioxide and water into glucose and oxygen.',
+        stepsHeading: 'Marking points to include',
+        steps: [
+          { title: 'Location', body: 'Takes place in chloroplasts, which contain chlorophyll to absorb light.' },
+          { title: 'Reactants and products', body: 'Carbon dioxide and water in; glucose and oxygen out. Give the balanced equation.' },
+          { title: 'Energy', body: 'Endothermic: energy is transferred from the environment by light.' },
+          { title: 'Uses of glucose', body: 'Respiration, starch for storage, cellulose for cell walls, and making proteins.' },
+        ],
+      },
+    }[s.style];
+
+    const styleTabs = [
+      { id: 'basic', title: 'Basic' },
+      { id: 'detailed', title: 'Detailed' },
+      { id: 'exam', title: 'Exam-focused' },
+    ].map((t) => {
+      const on = s.style === t.id;
+      return {
+        ...t,
+        pressed: on,
+        bg: on ? '#FFFFFF' : 'transparent',
+        color: on ? '#16181D' : '#5B6170',
+        shadow: on ? '0 1px 2px rgba(20,22,28,0.12)' : 'none',
+        pick: () => this.setState({ style: t.id }),
+      };
+    });
+
+    const options = [
+      { id: 'co2', key: 'A', title: 'Carbon dioxide' },
+      { id: 'o2', key: 'B', title: 'Oxygen' },
+      { id: 'n2', key: 'C', title: 'Nitrogen' },
+      { id: 'h2o', key: 'D', title: 'Water vapour' },
+    ].map((o) => {
+      const picked = s.answer === o.id;
+      const right = o.id === 'o2';
+      const showAsRight = s.answer && right;
+      const showAsWrong = picked && !right;
+      return {
+        ...o,
+        pressed: picked,
+        border: showAsRight ? '#1F8A5B' : showAsWrong ? '#E0A23A' : '#E3E6EC',
+        bg: showAsRight ? '#F1FAF5' : showAsWrong ? '#FFF9EC' : '#FFFFFF',
+        keyBg: showAsRight ? '#1F8A5B' : showAsWrong ? '#F5B23D' : '#EEF0F3',
+        keyColor: showAsRight ? '#FFFFFF' : '#16181D',
+        pick: () => this.setState({ answer: o.id }),
+      };
+    });
+
+    return {
+      styleTabs,
+      intro: content.intro,
+      stepsHeading: content.stepsHeading,
+      steps: content.steps.map((x, i) => ({ ...x, n: String(i + 1) })),
+      isExam: s.style === 'exam',
+      options,
+      showRight: s.answer === 'o2',
+      showWrong: !!s.answer && s.answer !== 'o2',
+    };
+  }
+}
+</script>
+</body>
+</html>

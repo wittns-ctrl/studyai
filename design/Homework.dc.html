@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Homework help</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#10806A}a:hover{color:#0B6655}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F7F7FB; color: #16181D; font-family: 'DM Sans', system-ui, sans-serif; display: flex; flex-direction: column">
+
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E3E6EC">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+      <a href="Dashboard.dc.html" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px 0 10px; border-radius: 6px; border: 1.5px solid #D5D9E2; color: #16181D; text-decoration: none; font-size: 14px; font-weight: 600">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>Today</a>
+      <h1 style="margin: 0; flex: 1; min-width: 200px; font-family: Outfit, sans-serif; font-size: 22px; font-weight: 800">Homework help</h1>
+      <span style="padding: 6px 12px; border-radius: 999px; background: #EEF0F3; font-size: 13px; font-weight: 600; color: #3A3F4B">Physics · Equations of motion</span>
+    </div>
+  </header>
+
+  <div style="max-width: 1320px; width: 100%; margin: 0 auto; padding: 28px 24px 40px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+    <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+
+      <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 14px; background: #E3F3EF; color: #0B4F43; font-size: 15px; line-height: 1.5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10806A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"></path><path d="M10 21h4"></path><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"></path></svg>
+        <span>studzAi guides you with hints so you can solve it yourself. It won't just give you the answer.</span>
+      </div>
+
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6170">Your problem</span>
+        <p style="margin: 0; font-family: Outfit, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em">A car accelerates from rest at 3 m/s² for 6 seconds. How far does it travel in that time?</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap">
+          <button type="button" style="min-height: 36px; padding: 6px 12px; border-radius: 8px; border: 1px solid #E3E6EC; background: #FFFFFF; font: 500 13px 'DM Sans', sans-serif; color: #3A3F4B">Edit problem</button>
+          <button type="button" style="min-height: 36px; padding: 6px 12px; border-radius: 8px; border: 1px solid #E3E6EC; background: #FFFFFF; font: 500 13px 'DM Sans', sans-serif; color: #3A3F4B">Explain a word</button>
+        </div>
+      </section>
+
+      <section aria-label="Hints" style="display: flex; flex-direction: column; gap: 10px">
+        <sc-for list="{{ hints }}" as="h" hint-placeholder-count="3">
+          <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 18px; background: {{ h.bg }}; border: 1.5px {{ h.borderStyle }} {{ h.border }}">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 10px; background: {{ h.numBg }}; color: {{ h.numColor }}; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center">{{ h.n }}</span>
+            <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 4px">
+              <strong style="font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: {{ h.labelColor }}">{{ h.label }}</strong>
+              <span style="font-size: 17px; line-height: 1.6; color: {{ h.textColor }}">{{ h.text }}</span>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ moreHints }}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{ nextHint }}" style="align-self: flex-start; height: 46px; padding: 0 20px; border-radius: 6px; border: 1.5px solid #10806A; background: #FFFFFF; color: #10806A; font: 600 15px 'DM Sans', sans-serif; cursor: pointer">{{ nextHintLabel }}</button>
+        </sc-if>
+      </section>
+
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <label for="hw-answer" style="font-size: 16px; font-weight: 700">Your answer and working</label>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <input id="hw-answer" type="text" value="{{ answer }}" onChange="{{ setAnswer }}" placeholder="e.g. s = ... so the distance is ... m" style="flex: 1 1 260px; height: 52px; padding: 0 16px; border-radius: 6px; border: 1.5px solid #D5D9E2; font: 400 16px 'DM Sans', sans-serif; color: #16181D">
+          <button type="button" onClick="{{ check }}" style="height: 52px; padding: 0 24px; border-radius: 6px; border: none; background: #10806A; color: #FFFFFF; box-shadow: 0 10px 20px -10px rgba(16,128,106,0.65); font: 600 15px 'DM Sans', sans-serif; cursor: pointer">Check my answer</button>
+        </div>
+        <sc-if value="{{ isWrong }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="padding: 14px 16px; border-radius: 12px; background: #FDF0D6; color: #5C3B00; font-size: 15px; line-height: 1.6"><strong>Not yet.</strong> A common slip is forgetting the ½ in ½at², or squaring 3 instead of 6. Check those two things and try again.</div>
+        </sc-if>
+        <sc-if value="{{ isRight }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <div role="status" style="padding: 14px 16px; border-radius: 12px; background: #E2F4EC; color: #145C3D; font-size: 15px; line-height: 1.6"><strong>That's it: 54 m.</strong> s = 0 × 6 + ½ × 3 × 6² = 54 m. You picked the right equation and handled u = 0 well.</div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 18px; border-radius: 14px; background: #0F4F45; color: #FFFFFF">
+              <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 15px">Lock it in with a similar one</strong><span style="font-size: 14px; color: #CFE3DE">A bike starts from rest and accelerates at 2 m/s² for 5 s. How far does it go?</span></div>
+              <button type="button" style="height: 46px; padding: 0 20px; border-radius: 6px; border: none; background: #F5B23D; color: #16181D; font: 700 15px 'DM Sans', sans-serif">Try it</button>
+            </div>
+          </div>
+        </sc-if>
+      </section>
+    </main>
+
+    <aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Formula sheet</h2>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-family: Outfit, sans-serif; font-size: 18px; font-weight: 700">
+          <span style="padding: 10px 14px; border-radius: 10px; background: #F7F7FB">v = u + at</span>
+          <span style="padding: 10px 14px; border-radius: 10px; background: #F7F7FB">s = ut + ½at²</span>
+          <span style="padding: 10px 14px; border-radius: 10px; background: #F7F7FB">v² = u² + 2as</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #5B6170">u = starting speed, v = final speed, a = acceleration, t = time, s = distance</p>
+      </section>
+
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">New problem</h2>
+        <button type="button" style="height: 48px; border-radius: 6px; border: 1.5px dashed #B9BFCB; background: #FAFBFC; font: 600 15px 'DM Sans', sans-serif; color: #16181D; display: flex; align-items: center; justify-content: center; gap: 10px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16181D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-3h8l2 3h3v13H3z"></path><circle cx="12" cy="13" r="4"></circle></svg>Snap a photo of it</button>
+        <button type="button" style="height: 48px; border-radius: 6px; border: 1.5px solid #D5D9E2; background: #FFFFFF; font: 600 15px 'DM Sans', sans-serif; color: #16181D">Type or paste a question</button>
+      </section>
+
+      <section style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Earlier today</h2>
+        <a href="Homework.dc.html" style="display: flex; justify-content: space-between; gap: 10px; padding: 12px; border-radius: 12px; background: #F7F7FB; text-decoration: none; color: #16181D; font-size: 14px"><span>Balancing Fe + O₂</span><span style="color: #1F8A5B; font-weight: 600">Solved</span></a>
+        <a href="Homework.dc.html" style="display: flex; justify-content: space-between; gap: 10px; padding: 12px; border-radius: 12px; background: #F7F7FB; text-decoration: none; color: #16181D; font-size: 14px"><span>Essay plan: causes of WWI</span><span style="color: #5B6170; font-weight: 600">In progress</span></a>
+      </section>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1120}}'>
+class Component extends DCLogic {
+  state = { shown: 1, answer: '', result: null };
+
+  renderVals() {
+    const s = this.state;
+    const all = [
+      'Start with what you know. "From rest" means the starting speed u = 0. You also have a = 3 m/s² and t = 6 s.',
+      'You want the distance s, and you know u, a and t. Which equation of motion uses exactly s, u, a and t?',
+      'Use s = ut + ½at². Because u = 0, the first part is zero. Now put in a = 3 and t = 6.',
+    ];
+    const hints = all.map((text, i) => {
+      const open = i < s.shown;
+      const latest = i === s.shown - 1;
+      return {
+        n: String(i + 1),
+        label: open ? 'Hint ' + (i + 1) : 'Hint ' + (i + 1) + ' · locked',
+        text: open ? text : 'Try the previous hint first. Unlock this one when you need it.',
+        bg: open ? (latest ? '#FFFFFF' : '#FAFBFC') : 'transparent',
+        border: latest ? '#10806A' : open ? '#E3E6EC' : '#C9CED8',
+        borderStyle: open ? 'solid' : 'dashed',
+        numBg: open ? (latest ? '#10806A' : '#E2F4EC') : '#EEF0F3',
+        numColor: open ? (latest ? '#FFFFFF' : '#145C3D') : '#5B6170',
+        labelColor: latest ? '#0B6655' : '#5B6170',
+        textColor: open ? '#16181D' : '#5B6170',
+      };
+    });
+    return {
+      hints,
+      moreHints: s.shown < all.length,
+      nextHintLabel: 'Show hint ' + (s.shown + 1),
+      nextHint: () => this.setState({ shown: Math.min(all.length, s.shown + 1) }),
+      answer: s.answer,
+      setAnswer: (e) => this.setState({ answer: e.target.value, result: null }),
+      check: () => this.setState({ result: /\b54\b/.test(s.answer) ? 'right' : 'wrong' }),
+      isWrong: s.result === 'wrong',
+      isRight: s.result === 'right',
+    };
+  }
+}
+</script>
+</body>
+</html>
