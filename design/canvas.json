@@ -1,20 +1,123 @@
 {
   "v": 3,
-  "createdOnFiles": {"v": 1, "at": "2026-11-02T18:30:00Z"},
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-02T18:30:00Z"
+  },
   "title": "studzAi UI/UX Design",
-  "launch": {"view": "canvas"},
+  "launch": {
+    "view": "canvas"
+  },
   "pages": [],
   "boards": {
-    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 1560, "title": "Design system"},
-    "Landing.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 3700, "title": "Landing page", "expand": "fill"},
-    "Onboarding.dc.html": {"x": 0, "y": 4060, "w": 1440, "h": 960, "title": "Sign up & onboarding", "expand": "fill", "is_interactive": true},
-    "Dashboard.dc.html": {"x": 1520, "y": 4060, "w": 1440, "h": 1500, "title": "Student dashboard", "expand": "fill"},
-    "Lesson.dc.html": {"x": 3040, "y": 4060, "w": 1440, "h": 1240, "title": "AI lesson", "expand": "fill", "is_interactive": true},
-    "Homework.dc.html": {"x": 4560, "y": 4060, "w": 1440, "h": 1120, "title": "Homework help", "expand": "fill", "is_interactive": true},
-    "Notes.dc.html": {"x": 6080, "y": 4060, "w": 1440, "h": 1120, "title": "Smart notes", "expand": "fill"},
-    "Teacher.dc.html": {"x": 0, "y": 5740, "w": 1440, "h": 1260, "title": "Teacher insights", "expand": "fill"},
-    "MobileHome.dc.html": {"x": 1520, "y": 5740, "w": 390, "h": 844, "title": "Mobile · Today"},
-    "MobileHomework.dc.html": {"x": 1990, "y": 5740, "w": 390, "h": 844, "title": "Mobile · Homework help"}
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1560,
+      "title": "Design system"
+    },
+    "Landing.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 3700,
+      "title": "Landing page",
+      "expand": "fill"
+    },
+    "Onboarding.dc.html": {
+      "x": 0,
+      "y": 4060,
+      "w": 1440,
+      "h": 960,
+      "title": "Sign up & onboarding",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Dashboard.dc.html": {
+      "x": 1520,
+      "y": 4060,
+      "w": 1440,
+      "h": 1060,
+      "title": "Student dashboard · progress hub",
+      "expand": "fill"
+    },
+    "Lesson.dc.html": {
+      "x": 3040,
+      "y": 4060,
+      "w": 1440,
+      "h": 1240,
+      "title": "AI lesson",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Homework.dc.html": {
+      "x": 4560,
+      "y": 4060,
+      "w": 1440,
+      "h": 1120,
+      "title": "Homework help",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Notes.dc.html": {
+      "x": 6080,
+      "y": 4060,
+      "w": 1440,
+      "h": 1120,
+      "title": "Smart notes",
+      "expand": "fill"
+    },
+    "Teacher.dc.html": {
+      "x": 0,
+      "y": 5740,
+      "w": 1440,
+      "h": 1260,
+      "title": "Teacher insights",
+      "expand": "fill"
+    },
+    "MobileHome.dc.html": {
+      "x": 1520,
+      "y": 5740,
+      "w": 390,
+      "h": 844,
+      "title": "Mobile · Today"
+    },
+    "MobileHomework.dc.html": {
+      "x": 1990,
+      "y": 5740,
+      "w": 390,
+      "h": 844,
+      "title": "Mobile · Homework help"
+    },
+    "Explore.dc.html": {
+      "x": 4560,
+      "y": 7400,
+      "w": 1440,
+      "h": 800,
+      "title": "Explore new skills"
+    },
+    "Timeline.dc.html": {
+      "x": 1520,
+      "y": 7400,
+      "w": 1440,
+      "h": 810,
+      "title": "Workshop timeline"
+    },
+    "Quiz.dc.html": {
+      "x": 3040,
+      "y": 7400,
+      "w": 1440,
+      "h": 790,
+      "title": "Gamified quiz"
+    },
+    "ProgressHub.dc.html": {
+      "x": 0,
+      "y": 7400,
+      "w": 1440,
+      "h": 828,
+      "title": "Modular progress hub"
+    }
   },
   "order": [
     "Main.dc.html",
@@ -26,12 +129,41 @@
     "Notes.dc.html",
     "Teacher.dc.html",
     "MobileHome.dc.html",
-    "MobileHomework.dc.html"
+    "MobileHomework.dc.html",
+    "ProgressHub.dc.html",
+    "Timeline.dc.html",
+    "Quiz.dc.html",
+    "Explore.dc.html"
   ],
   "notes": {
-    "row1": {"x": 0, "y": -320, "text": "Foundations & marketing", "kind": "title1", "maxW": 2960},
-    "row2": {"x": 0, "y": 3740, "text": "Student experience", "kind": "title1", "maxW": 7520},
-    "row3": {"x": 0, "y": 5420, "text": "Teacher & mobile", "kind": "title1", "maxW": 2380}
+    "row1": {
+      "x": 0,
+      "y": -320,
+      "text": "Foundations & marketing",
+      "kind": "title1",
+      "maxW": 2960
+    },
+    "row2": {
+      "x": 0,
+      "y": 3740,
+      "text": "Student experience",
+      "kind": "title1",
+      "maxW": 7520
+    },
+    "row3": {
+      "x": 0,
+      "y": 5420,
+      "text": "Teacher & mobile",
+      "kind": "title1",
+      "maxW": 2380
+    },
+    "row4": {
+      "x": 0,
+      "y": 7080,
+      "text": "Reference pages",
+      "kind": "title1",
+      "maxW": 6000
+    }
   },
   "designSystems": []
 }
