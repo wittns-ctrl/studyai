@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gamified Quiz</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 790px; overflow: hidden; background: #F2EEE3; color: #1E2B24; font-family: 'Inter', system-ui, sans-serif">
+  <svg width="1354" height="380" viewBox="86 0 1354 380" aria-label="Badges: shield earned, medal in progress, circle badge next" role="img" style="position: absolute; left: 86px; top: 0">
+    <defs>
+      <radialGradient id="qglow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#A9DBBD" stop-opacity="0.55"></stop><stop offset="0.6" stop-color="#7DB596" stop-opacity="0.18"></stop><stop offset="1" stop-color="#7DB596" stop-opacity="0"></stop></radialGradient>
+      <radialGradient id="qband" cx="50%" cy="55%" r="60%"><stop offset="0" stop-color="#2A5A45"></stop><stop offset="1" stop-color="#1C4031"></stop></radialGradient>
+      <linearGradient id="qglass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D6E4D8" stop-opacity="0.9"></stop><stop offset="1" stop-color="#6D917D" stop-opacity="0.75"></stop></linearGradient>
+      <linearGradient id="qglass2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A8C2AF" stop-opacity="0.75"></stop><stop offset="1" stop-color="#456B58" stop-opacity="0.75"></stop></linearGradient>
+      <linearGradient id="qmedal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3EEE4"></stop><stop offset="1" stop-color="#86AA92"></stop></linearGradient>
+      <filter id="qsoft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"></feGaussianBlur></filter>
+    </defs>
+    <rect x="86" y="0" width="1354" height="380" fill="url(#qband)"></rect>
+    <ellipse cx="769" cy="211" rx="190" ry="165" fill="url(#qglow)"></ellipse>
+
+    <!-- shield -->
+    <g>
+      <path d="M475 130 L543 156 V214 C543 252 515 280 475 292 C435 280 407 252 407 214 V156 Z" fill="#B9D4C3" opacity="0.35" filter="url(#qsoft)"></path>
+      <path d="M475 130 L543 156 V214 C543 252 515 280 475 292 C435 280 407 252 407 214 V156 Z" fill="url(#qglass)" stroke="#E6F0E8" stroke-opacity="0.75" stroke-width="2.5" stroke-linejoin="round"></path>
+      <path d="M475 148 L526 168 V214 C526 242 506 263 475 273 C444 263 424 242 424 214 V168 Z" fill="#6E9580" fill-opacity="0.55"></path>
+      <path d="m452 212 17 17 32-36" fill="none" stroke="#F1F7F2" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+
+    <!-- medal -->
+    <g>
+      <circle cx="802" cy="104" r="9" fill="none" stroke="#D8E6DB" stroke-width="4"></circle>
+      <polygon points="769.0,107.0 780.7,116.7 794.4,110.1 803.4,122.3 818.3,119.1 824.1,133.2 839.3,133.7 841.6,148.7 856.2,152.8 854.9,167.9 868.1,175.4 863.2,189.8 874.2,200.2 866.0,213.0 874.2,225.8 863.2,236.2 868.1,250.6 854.9,258.1 856.2,273.2 841.6,277.3 839.3,292.3 824.1,292.8 818.3,306.9 803.4,303.7 794.4,315.9 780.7,309.3 769.0,319.0 757.3,309.3 743.6,315.9 734.6,303.7 719.7,306.9 713.9,292.8 698.7,292.3 696.4,277.3 681.8,273.2 683.1,258.1 669.9,250.6 674.8,236.2 663.8,225.8 672.0,213.0 663.8,200.2 674.8,189.8 669.9,175.4 683.1,167.9 681.8,152.8 696.4,148.7 698.7,133.7 713.9,133.2 719.7,119.1 734.6,122.3 743.6,110.1 757.3,116.7" fill="url(#qmedal)" stroke="#F0F6F1" stroke-width="2.5" stroke-linejoin="round"></polygon>
+      <circle cx="769" cy="213" r="82" fill="#2C5A45" stroke="#DCE9DF" stroke-width="4"></circle>
+      <circle cx="769" cy="213" r="66" fill="none" stroke="#9CC8AB" stroke-opacity="0.6" stroke-width="2"></circle>
+      <path d="m736 215 23 23 44-50" fill="none" stroke="#F1F7F2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+
+    <!-- circle badge -->
+    <g>
+      <circle cx="1048" cy="211" r="81" fill="#B9D4C3" opacity="0.25" filter="url(#qsoft)"></circle>
+      <circle cx="1048" cy="211" r="78" fill="url(#qglass2)" stroke="#DCE9DF" stroke-opacity="0.6" stroke-width="2.5"></circle>
+      <circle cx="1048" cy="211" r="60" fill="#3E6A55" fill-opacity="0.7" stroke="#E6F0E8" stroke-opacity="0.45" stroke-width="2"></circle>
+      <path d="m1019 213 21 21 38-43" fill="none" stroke="#E3EFE6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+  </svg>
+  <aside style="position: absolute; left: 0; top: 0; width: 86px; height: 790px; background: #1A3C2E; border-right: 1px solid rgba(255,255,255,0.08)">
+    <a href="Landing.dc.html" aria-label="studzAi home" style="position: absolute; left: 26px; top: 34px; width: 34px; height: 34px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid #E8EFE9; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; justify-content: center; font: 800 16px 'Inter', system-ui, sans-serif">S</a>
+    <nav aria-label="App"><a href="Dashboard.dc.html" aria-label="Today" title="Today" style="position: absolute; left: 23px; top: 198px; width: 40px; height: 36px; border-radius: 9px;  display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9FBBAA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path></svg></a><a href="ProgressHub.dc.html" aria-label="Modular progress hub" title="Modular progress hub" style="position: absolute; left: 23px; top: 249px; width: 40px; height: 36px; border-radius: 9px;  display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9FBBAA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18"></path><path d="M9 9v11"></path></svg></a><a href="Timeline.dc.html" aria-label="Workshop timeline" title="Workshop timeline" style="position: absolute; left: 23px; top: 300px; width: 40px; height: 36px; border-radius: 9px;  display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9FBBAA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4V3h6v1"></path><path d="M9 10h6"></path><path d="M9 14h4"></path></svg></a><a href="Quiz.dc.html" aria-current="page" aria-label="Gamified quiz" title="Gamified quiz" style="position: absolute; left: 23px; top: 351px; width: 40px; height: 36px; border-radius: 9px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5"></path><path d="M12 13v8"></path></svg></a><a href="Explore.dc.html" aria-label="Explore new skills" title="Explore new skills" style="position: absolute; left: 23px; top: 402px; width: 40px; height: 36px; border-radius: 9px;  display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9FBBAA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></a></nav>
+    <a href="Dashboard.dc.html" aria-label="Settings" title="Settings" style="position: absolute; left: 23px; top: 669px; width: 40px; height: 36px; display: flex; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9FBBAA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg></a>
+    <span title="Amani Uwase" style="position: absolute; left: 29px; top: 724px"><span style="display: block; width: 28px; height: 28px; flex: none; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 2px rgba(255,255,255,0.85)"><svg width="28" height="28" viewBox="0 0 40 40" aria-hidden="true" style="display: block; border-radius: 50%"><rect width="40" height="40" fill="#9DB7A4"></rect><path d="M6 40c1-8 7-12 14-12s13 4 14 12z" fill="#4F6B5A"></path><circle cx="20" cy="17" r="8" fill="#C99A76"></circle><path d="M11.5 16c0-6 4-9 8.5-9s8.5 3 8.5 9c-1.5-3-4-4.5-8.5-4.5S13 13 11.5 16z" fill="#3B2A20"></path></svg></span></span>
+  </aside>
+
+  <a href="Dashboard.dc.html" aria-label="Back" style="position: absolute; left: 140px; top: 35px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+  <h1 style="position: absolute; left: 189px; top: 31px; margin: 0; font: 500 30px 'Inter', system-ui, sans-serif; letter-spacing: -0.01em; color: #FFFFFF">Gamified Quiz</h1>
+  <button type="button" style="position: absolute; left: 1225px; top: 32px; width: 156px; height: 37px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.1); color: #DDEAE1; font: 500 12px 'Inter', system-ui, sans-serif">Session options</button>
+  <button type="button" aria-label="Previous badge" style="position: absolute; left: 299px; top: 194px; width: 34px; height: 34px; border-radius: 50%; border: none; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; padding: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DCEBE1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+  <button type="button" aria-label="Next badge" style="position: absolute; left: 1205px; top: 194px; width: 34px; height: 34px; border-radius: 50%; border: none; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; padding: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DCEBE1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></button>
+  <div role="presentation" style="position: absolute; left: 744px; top: 348px; display: flex; gap: 7px; align-items: center">
+    <span style="width: 14px; height: 4px; border-radius: 999px; background: #E6F0E8"></span>
+    <span style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.45)"></span>
+    <span style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.45)"></span>
+    <span style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.45)"></span>
+    <span style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.45)"></span>
+  </div>
+
+  <section style="position: absolute; left: 299px; top: 421px; width: 661px; height: 159px; background: #FFFFFF; border-radius: 10px">
+      <span style="position: absolute; left: 24px; top: 21px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A4A40" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+      <h2 style="position: absolute; left: 54px; top: 19px; margin: 0; font: 600 15px/22px 'Inter', system-ui, sans-serif; color: #1E2B24">What does our scorecard measure in questions?</h2>
+      <span style="position: absolute; left: 34px; top: 55px; width: 10px; height: 10px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #B9BFB4"></span>
+      <span style="position: absolute; left: 54px; top: 52px; font: 400 11px 'Inter', system-ui, sans-serif; color: #6B756E">Examples</span>
+      <div style="position: absolute; left: 24px; top: 82px; width: 617px; height: 54px; border-radius: 6px; background: #B7CDB3">
+        <span style="position: absolute; left: 30px; top: 16px; width: 22px; height: 22px; border-radius: 50%; background: #5E8C6D; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+        <span style="position: absolute; left: 66px; top: 18px; font: 500 13px 'Inter', system-ui, sans-serif; color: #2B4637">Practice</span>
+        <span style="position: absolute; right: 22px; top: 18px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3E5E4B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+      </div>
+    </section>
+  <section style="position: absolute; left: 299px; top: 595px; width: 661px; height: 180px; background: #FFFFFF; border-radius: 10px">
+      <span style="position: absolute; left: 24px; top: 21px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A4A40" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+      <h2 style="position: absolute; left: 54px; top: 19px; margin: 0; font: 600 15px/22px 'Inter', system-ui, sans-serif; color: #1E2B24">Describe the preferred approach to a successful<br>exam question?</h2>
+      <span style="position: absolute; left: 34px; top: 77px; width: 10px; height: 10px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #B9BFB4"></span>
+      <span style="position: absolute; left: 54px; top: 74px; font: 400 11px 'Inter', system-ui, sans-serif; color: #6B756E">Examples</span>
+      <div style="position: absolute; left: 24px; top: 104px; width: 617px; height: 54px; border-radius: 6px; background: #B7CDB3">
+        <span style="position: absolute; left: 30px; top: 16px; width: 22px; height: 22px; border-radius: 50%; background: #5E8C6D; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+        <span style="position: absolute; left: 66px; top: 18px; font: 500 13px 'Inter', system-ui, sans-serif; color: #2B4637">Practice</span>
+        <span style="position: absolute; right: 22px; top: 18px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3E5E4B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+      </div>
+    </section>
+
+  <aside style="position: absolute; left: 982px; top: 421px; width: 262px; height: 240px; background: #FFFFFF; border-radius: 10px">
+    <h2 style="position: absolute; left: 22px; top: 22px; margin: 0; font: 600 15px 'Inter', system-ui, sans-serif">Feedback</h2>
+    <span style="position: absolute; left: 26px; top: 66px; width: 51px; height: 51px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid #6E9A7B; background: #EEF4EE; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E6A50" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="position: absolute; left: 11px; width: 80px; top: 126px; text-align: center; font: 400 11px 'Inter', system-ui, sans-serif; color: #6B756E">8</span><span style="position: absolute; left: 105px; top: 66px; width: 51px; height: 51px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid #6E9A7B; background: #EEF4EE; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E6A50" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="position: absolute; left: 90px; width: 80px; top: 126px; text-align: center; font: 400 11px 'Inter', system-ui, sans-serif; color: #6B756E">Progress</span><span style="position: absolute; left: 186px; top: 66px; width: 51px; height: 51px; box-sizing: border-box; border-radius: 50%; border: 2px solid #E2DFD2; background: #FFFFFF"></span>
+    <button type="button" style="position: absolute; left: 22px; top: 176px; width: 220px; height: 44px; border-radius: 6px; border: none; background: #8FB293; color: #FFFFFF; font: 500 12px 'Inter', system-ui, sans-serif">Feedback</button>
+  </aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":790}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
